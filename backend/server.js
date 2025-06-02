@@ -6,21 +6,22 @@ const PORT = process.env.PORT || 3000;
 // Middleware para parsear JSON
 app.use(express.json());
 
-// Ejemplo de ruta API
+// Ruta API de ejemplo
 app.get('/api/hello', (req, res) => {
   res.json({ message: '¡Hola desde el backend de CD Laguna!' });
 });
 
-// Sirve el frontend Angular compilado
-app.use(express.static(path.join(__dirname, '../frontend/dist/cdlaguna')));
+// Servir archivos estáticos del frontend compilado (ahora en public)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Para cualquier otra ruta, devuelve index.html (Angular routing)
+// Redirigir todo lo demás al index.html (Angular routing)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/cdlaguna/index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Inicia el servidor
+// Iniciar servidor
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
+
 
