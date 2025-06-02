@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: cdlaguna
+    env: node
+    buildCommand: npm install && npm run build --prefix frontend
+    startCommand: node backend/server.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: cdlaguna-db
+          property: connectionString
+
+databases:
+  - name: cdlaguna-db
