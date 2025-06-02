@@ -1,9 +1,12 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware para parsear JSON
+// Middleware
+app.use(cors());
 app.use(express.json());
 
 // Ruta API de ejemplo
@@ -23,5 +26,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
-
