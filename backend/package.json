@@ -1,16 +1,16 @@
 {
-  "name": "backend",
+  "name": "cdlaguna-backend",
   "version": "1.0.0",
+  "description": "Backend para CD Laguna con Express y Angular compilado",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "cors": "^2.8.5"
   }
 }
