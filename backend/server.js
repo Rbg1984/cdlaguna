@@ -8,17 +8,17 @@ const jugadoresRoutes = require('./routes/jugadores');
 // Middleware
 app.use(express.json());
 
-// Rutas API
+// API
 app.use('/api/jugadores', jugadoresRoutes);
 
-// Servir frontend compilado
-app.use(express.static(path.join(__dirname, '../frontend/dist/cdlaguna')));
+// ⚠️ Servir directamente el frontend desde frontend/dist
+const frontendPath = path.join(__dirname, '../frontend/dist/cdlaguna');
+app.use(express.static(frontendPath));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/cdlaguna/index.html'));
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-// Arrancar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
