@@ -4,13 +4,15 @@
   "description": "Backend para CD Laguna con Express y Angular compilado",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm install && cd ../frontend && npm install && npx ng build --configuration production && cp -r dist/cdlaguna ../backend/public"
   },
   "engines": {
     "node": "18.x"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^4.21.2"
   }
 }
