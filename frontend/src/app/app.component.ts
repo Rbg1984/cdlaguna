@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
   ];
 
   sponsors = [
-    'assets/sponsor1.png',
-    'assets/sponsor2.png',
-    'assets/sponsor3.png',
-    'assets/sponsor4.png',
+    'assets/sponsor1.jpg',
+    'assets/sponsor2.jpg',
+    'assets/sponsor3.jpg',
+    'assets/sponsor4.jpg',
   ];
 
   noticias = [
