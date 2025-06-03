@@ -59,3 +59,62 @@ footer {
   color: #ffffff;
   font-size: 0.9rem;
 }
+
+/* Ajustes generales para el header */
+header {
+  background-color: #111;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+/* Logo */
+header img {
+  height: 60px;
+}
+
+/* Título del club */
+header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+  padding: 0.5rem 2rem;
+}
+
+/* Estilo del menú */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown-menu a:hover {
+  background-color: #c40000;
+  color: white !important;
+}
+
+/* Submenús */
+.dropdown-menu {
+  background-color: #222;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #fff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #c40000;
+  color: white;
+}
+
+/* Responsive: centra el menú cuando se colapsa */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
