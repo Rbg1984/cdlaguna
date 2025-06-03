@@ -1,108 +1,61 @@
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-  padding: 10px 0;
-  position: relative;
+/* Estilo general */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.logo {
-  height: 100px;
+/* Logo en navbar */
+.navbar-brand img {
+  border-radius: 8px;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  color: white;
-  font-size: 28px;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
+/* Navbar */
 .navbar {
-  width: 100%;
-  background-color: black;
+  border-bottom: 3px solid #cc0000;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-
-.nav-links li {
-  position: relative;
-  margin: 0 15px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
+/* Links activos y hover en navbar */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #cc0000;
   font-weight: bold;
-  padding: 10px 15px;
-  display: block;
 }
 
-.nav-links a:hover {
-  background-color: #cc0000;
-  border-radius: 5px;
+/* Slider */
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
 }
 
-/* Submenú */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: black;
-  min-width: 160px;
-  z-index: 1000;
-  flex-direction: column;
-}
-
-.dropdown-menu li {
-  margin: 0;
-}
-
-.dropdown-menu a {
-  padding: 10px;
-  text-align: left;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .carousel-item img {
+    height: 250px;
   }
+}
 
-  .navbar {
-    display: none;
-    width: 100%;
-  }
+/* Anunciantes (scroll horizontal) */
+section.bg-light img {
+  transition: transform 0.3s ease-in-out;
+}
+section.bg-light img:hover {
+  transform: scale(1.1);
+}
 
-  .navbar.active {
-    display: block;
-  }
+/* Noticias */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
+.card-title {
+  color: #cc0000;
+}
 
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .dropdown-menu {
-    position: relative;
-  }
+/* Footer */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.9rem;
 }
