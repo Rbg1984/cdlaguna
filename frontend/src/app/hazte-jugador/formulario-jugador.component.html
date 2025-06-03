@@ -1,0 +1,37 @@
+<form [formGroup]="jugadorForm" (ngSubmit)="siguiente()">
+  <h2>Datos del Jugador</h2>
+  <input type="text" placeholder="Nombre y Apellidos" formControlName="nombre" />
+  <input type="text" placeholder="DNI" formControlName="dni" />
+  <input type="date" formControlName="fechaNacimiento" />
+  <input type="text" placeholder="Localidad" formControlName="localidad" />
+  <input type="text" placeholder="Provincia" formControlName="provincia" />
+  <input type="text" placeholder="País" formControlName="pais" />
+  <input type="text" placeholder="Nacionalidad" formControlName="nacionalidad" />
+  <input type="text" placeholder="Domicilio" formControlName="domicilio" />
+  <input type="text" placeholder="Código Postal" formControlName="codigoPostal" />
+  <input type="text" placeholder="Localidad/Provincia" formControlName="localidadProvincia" />
+  <input type="email" placeholder="Correo Electrónico" formControlName="email" />
+  <input type="text" placeholder="Teléfono Fijo" formControlName="telefonoFijo" />
+  <input type="text" placeholder="Teléfono Móvil" formControlName="telefonoMovil" />
+  <input type="text" placeholder="Tarjeta Médica (CYL)" formControlName="tarjetaMedica" />
+
+  <h3>Datos del Padre o Tutor</h3>
+  <div formGroupName="padre">
+    <input type="text" placeholder="Nombre" formControlName="nombre" />
+    <input type="text" placeholder="DNI" formControlName="dni" />
+    <input type="text" placeholder="Teléfono" formControlName="telefono" />
+    <input type="text" placeholder="Domicilio" formControlName="domicilio" />
+    <input type="email" placeholder="Correo Electrónico" formControlName="email" />
+  </div>
+
+  <h3>Datos de la Madre o Tutora</h3>
+  <div formGroupName="madre">
+    <input type="text" placeholder="Nombre" formControlName="nombre" />
+    <input type="text" placeholder="DNI" formControlName="dni" />
+    <input type="text" placeholder="Teléfono" formControlName="telefono" />
+    <input type="text" placeholder="Domicilio" formControlName="domicilio" />
+    <input type="email" placeholder="Correo Electrónico" formControlName="email" />
+  </div>
+
+  <button type="submit">Siguiente</button>
+</form>

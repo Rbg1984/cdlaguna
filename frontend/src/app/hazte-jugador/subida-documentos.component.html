@@ -1,0 +1,6 @@
+<h2>Sube tus documentos</h2>
+<input type="file" (change)="onFileChange($event, 'dniFrontal')" /> DNI Frontal<br>
+<input type="file" (change)="onFileChange($event, 'dniTrasero')" /> DNI Trasero<br>
+<input type="file" (change)="onFileChange($event, 'tarjetaSanitaria')" /> Tarjeta Sanitaria<br>
+<input type="file" (change)="onFileChange($event, 'certificadoMedico')" /> Certificado Médico (opcional)<br>
+<button (click)="siguiente()">Siguiente</button>
