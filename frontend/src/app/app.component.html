@@ -1,0 +1,47 @@
+<!-- Header -->
+<header class="header">
+  <div class="logo-menu">
+    <img src="assets/logo.png" alt="Logo Club" class="logo" />
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Equipo</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Slider -->
+<div class="slider">
+  <div
+    class="slides"
+    [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+  >
+    <img *ngFor="let img of sliderImages" [src]="img" />
+  </div>
+  <button class="prev" (click)="prevSlide()">‹</button>
+  <button class="next" (click)="nextSlide()">›</button>
+</div>
+
+<!-- Banner de patrocinadores -->
+<div class="sponsors-banner">
+  <div class="scroll">
+    <img *ngFor="let img of sponsors" [src]="img" />
+  </div>
+</div>
+
+<!-- Noticias -->
+<section class="news">
+  <div class="news-item" *ngFor="let noticia of noticias">
+    <img [src]="noticia.imagen" alt="noticia" />
+    <p>{{ noticia.texto }}</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Club Deportivo Laguna de Duero - Todos los derechos reservados</p>
+  <p>Contacto: contacto@cdlaguna.es | Tel: 123 456 789</p>
+</footer>

@@ -1,14 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <nav>
-      <a routerLink="/">Inicio</a> |
-      <a routerLink="/contacto">Contacto</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
-  styles: [`nav a { margin: 1rem; color: black; text-decoration: none; }`]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent { }
+export class AppComponent implements OnInit {
+  currentSlide = 0;
+  sliderImages = [
+    'assets/slide1.jpg',
+    'assets/slide2.jpg',
+    'assets/slide3.jpg',
+  ];
+
+  sponsors = [
+    'assets/sponsor1.png',
+    'assets/sponsor2.png',
+    'assets/sponsor3.png',
+    'assets/sponsor4.png',
+  ];
+
+  noticias = [
+    { imagen: 'assets/news1.jpg', texto: 'Victoria del equipo en casa' },
+    { imagen: 'assets/news2.jpg', texto: 'Nueva equipación disponible' },
+    { imagen: 'assets/news3.jpg', texto: 'Calendario de entrenamientos' },
+    { imagen: 'assets/news4.jpg', texto: 'Entrevista al capitán' },
+    { imagen: 'assets/news5.jpg', texto: 'Torneo local próximo domingo' },
+    { imagen: 'assets/news6.jpg', texto: 'Ampliación del campo de juego' },
+  ];
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Cambia cada 5s
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.sliderImages.length;
+  }
+
+  prevSlide() {
+    this.currentSlide =
+      (this.currentSlide - 1 + this.sliderImages.length) %
+      this.sliderImages.length;
+  }
+}
