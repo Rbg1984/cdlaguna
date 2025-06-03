@@ -1,16 +1,33 @@
 <!-- Header -->
 <header class="header">
-  <div class="logo-menu">
-    <img src="assets/logo.png" alt="Logo Club" class="logo" />
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Equipo</a></li>
-        <li><a href="#">Noticias</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
+  <div class="logo-container">
+    <img
+      src="assets/logo-club/logo-club.png"
+      alt="Logo del club"
+      class="logo"
+    />
   </div>
+
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+  <nav class="navbar" [class.active]="menuOpen">
+    <ul class="nav-links">
+      <li><a href="#">Inicio</a></li>
+
+      <li class="dropdown">
+        <a href="#">Equipo</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Primer equipo</a></li>
+          <li><a href="#">Juvenil</a></li>
+          <li><a href="#">Infantil</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Noticias</a></li>
+      <li><a href="#">Calendario</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Slider -->
