@@ -1,28 +1,14 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend/dist/cdlaguna')));
 
-// Ruta API de ejemplo
-app.get('/api/hello', (req, res) => {
-  res.json({ message: '¡Hola desde el backend de CD Laguna!' });
-});
-
-// Servir archivos estáticos del frontend compilado (ahora en public)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Redirigir todo lo demás al index.html (Angular routing)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/dist/cdlaguna/index.html'));
 });
 
-// Iniciar servidor
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+  console.log(`Servidor en puerto ${PORT}`);
 });
